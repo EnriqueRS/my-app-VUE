@@ -12,6 +12,32 @@ export default {
     HelloWorld
   }
 }
+
+/* fetch('https://restcountries.eu/rest/v2/region/europe')
+.then(res => res.json())
+.then(data => {
+  data.forEach(country => {
+    console.log(country.name)
+  });
+})
+.catch(error => {
+  console.log(`Error: \n\n ${error.name}`)
+  }) */
+
+//async await
+const getCountries = async() => {
+  try{
+    const result = await fetch('https://restcountries.eu/rest/v2/region/europe')
+    const data = await result.json()
+    data.forEach(country => {
+      console.log(country.name)
+    });
+  }catch(error) {
+    console.log(error)
+  }
+}
+
+getCountries()
 </script>
 
 <style>
