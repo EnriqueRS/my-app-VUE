@@ -29,9 +29,12 @@ const getCountries = async() => {
   try{
     const result = await fetch('https://restcountries.eu/rest/v2/region/europe')
     const data = await result.json()
-    data.forEach(country => {
+    /* data.forEach(country => {
       console.log(country.name)
-    });
+    }); */
+    const arrayCountriesNames = data.map(country => country.name)
+    const arrayCountriesFiltered = arrayCountriesNames.filter(countryName => countryName == 'Spain')
+    console.log(arrayCountriesFiltered)
   }catch(error) {
     console.log(error)
   }
