@@ -32,8 +32,9 @@ const getCountries = async() => {
     /* data.forEach(country => {
       console.log(country.name)
     }); */
-    const arrayCountriesNames = data.map(country => country.name)
-    const arrayCountriesFiltered = arrayCountriesNames.filter(countryName => countryName == 'Spain')
+    // const arrayCountriesNames = data.map(country => country.name)
+    //Countries population bigger than 20 million people
+    const arrayCountriesFiltered = data.filter(country => country.population > 20000000)
     console.log(arrayCountriesFiltered)
   }catch(error) {
     console.log(error)
